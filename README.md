@@ -5,6 +5,5 @@ just static data
 <br> 
 1- Cubite State Managment <br>  
 2- package awesome_dialog <br>
- <video controls width="600" height="400" autoplay loop>
-      <source src="(https://www.youtube.com/shorts/9DfvMJ-aXTg)" type="video/mp4">
-    </video>
+
+you can watch app video https://www.youtube.com/shorts/9DfvMJ-aXTg
