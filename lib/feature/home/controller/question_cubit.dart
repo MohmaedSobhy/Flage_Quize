@@ -1,6 +1,6 @@
-import 'package:flage_quiz/helper/helper.dart';
-import 'package:flage_quiz/logic/question/question_stats.dart';
-import 'package:flage_quiz/model/question_model.dart';
+import 'package:flage_quiz/core/helper/helper.dart';
+import 'package:flage_quiz/feature/home/controller/question_stats.dart';
+import 'package:flage_quiz/feature/home/model/question_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,6 +9,7 @@ class QuestionCubit extends Cubit<QuestionStates> {
 
   int _currentQuesiton = 0;
   int lenght = Question.dummyData().length;
+  static QuestionCubit? questionCubit;
   String btnSubmit = "Submit";
   int resultes = 0;
   Question question = Question.dummyData()[0];
@@ -18,11 +19,12 @@ class QuestionCubit extends Cubit<QuestionStates> {
   // false if user click submit button Check Answer else  Choose nextQuestion
   bool nextQuestion = false;
 
-  // this variable to avoid when user submit answer
-  // and i make sure after submit he can't change buttons
   bool btnSubmitClicked = false;
 
-  static QuestionCubit get(context) => BlocProvider.of(context);
+  static QuestionCubit get(context) {
+    questionCubit ??= BlocProvider.of(context);
+    return questionCubit!;
+  }
 
   void selectAnswer(int buttonIndex) {
     if (!btnSubmitClicked) {

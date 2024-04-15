@@ -3,11 +3,16 @@ import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class CustomeButton extends StatelessWidget {
-  CustomeButton(
-      {super.key, required this.color, required this.txt, required this.onTap});
-  Color color;
-  String txt;
-  VoidCallback onTap;
+  final Color color;
+  final String txt;
+  final VoidCallback onTap;
+  const CustomeButton({
+    super.key,
+    required this.color,
+    required this.txt,
+    required this.onTap,
+  });
+
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
